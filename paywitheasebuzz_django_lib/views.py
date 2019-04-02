@@ -13,9 +13,9 @@ import json
 from easebuzz_lib.easebuzz_payment_gateway import Easebuzz
 
 # Based on API call change the Merchant key and salt key for (initaite payment) on testing
-MERCHANT_KEY = "4Z9D9HGPNL"
-SALT = "MSXUVWL6E6"
-ENV = "prod"
+MERCHANT_KEY = "XXXXXXXXXX"
+SALT = "XXXXXXXXXX"
+ENV = "test"
 
 # create Easebuzz object and send data
 easebuzzObj = Easebuzz(MERCHANT_KEY, SALT, ENV)
