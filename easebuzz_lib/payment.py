@@ -390,6 +390,8 @@ def _getURL(env):
         url_link = "https://testpay.easebuzz.in/"
     elif env == 'prod':
         url_link = 'https://pay.easebuzz.in/'
+    elif env == 'dev':
+        url_link = 'https://devpay.easebuzz.in/'
     else:
         url_link = "https://testpay.easebuzz.in/"
 
@@ -487,7 +489,8 @@ def _pay(params_array, salt_key, url):
     else:
         return {
             'status' : 1,
-            'data' : url + 'pay/' + accesskey
+            'data' : url + 'pay/' + accesskey,
+            'access_key': accesskey
         }
 
 
@@ -552,7 +555,8 @@ def _paymentResponse(params_array):
 
         return {
             "status" : 1,
-            "data" : params_array['data'] #.encode('utf-8')
+            "data" : params_array['data'], #.encode('utf-8')
+            "access_key" : params_array['access_key']
         }
     else:
         return params_array
